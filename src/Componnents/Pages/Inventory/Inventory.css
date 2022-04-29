@@ -24,3 +24,9 @@
 .list_container_text:hover {
   color: rgb(255, 142, 122);
 }
+
+.invntory_product_container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}

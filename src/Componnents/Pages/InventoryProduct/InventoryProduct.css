@@ -1,0 +1,21 @@
+.single_item_container{
+    padding: 20px;
+    box-shadow: 0px 3px 21px 0px rgba(35, 35, 35, 0.09);
+    border-radius: 5px;
+}
+
+.single_title_container{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+}
+.single_title_container .single_Name{
+    font-size: 18px;
+    font-variant: small-caps;
+    font-weight: 700;
+    border-bottom: 2px dashed;
+    line-height: 1.2;
+    border-width: 2px;
+    padding-bottom: 5px;
+}
