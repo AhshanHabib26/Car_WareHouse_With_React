@@ -1,0 +1,30 @@
+.banner_container{
+    position: relative;
+}
+.banner_text_container{
+    position: absolute;
+    top: 30%;
+    left: 5%;
+}
+.text_container_slogan{
+    font-size: 32px;
+    font-weight: 700;
+    color: rgb(255, 134, 112);
+    border-left: 5px solid;
+    padding-left: 8px;
+}
+.text_container_title{
+    width: 620px;
+    font-size: 50px;
+    color: #363636;
+}
+.banner_btn{
+    border: none;
+    outline: none;
+    background-color: rgb(255, 134, 112);
+    padding: 15px 25px;
+    font-size: 16px;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}

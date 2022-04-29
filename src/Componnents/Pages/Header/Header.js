@@ -12,10 +12,10 @@ import './Header.css'
 
 const Header = () => {
   return (
-    <div className="container">
+    <div>
       <Navbar style={{sticky: "top"}} bg="body" expand="lg">
         <Container fluid>
-          <Navbar.Brand href="#">Car<span className="logo_text">House</span> </Navbar.Brand>
+          <Navbar.Brand as={Link} to='/' >Car<span className="logo_text">House</span> </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
