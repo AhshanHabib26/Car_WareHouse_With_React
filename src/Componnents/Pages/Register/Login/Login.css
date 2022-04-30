@@ -1,0 +1,11 @@
+.submit_btn_login input[type="button"]{
+    width: 150px;
+    height: 50px;
+    border: none;
+    outline: none;
+    background-color: rgb(255, 151, 132);
+    color: #f0f8ff;
+    font-size: 18px;
+    font-variant: small-caps;
+    margin-top: 30px;
+}
