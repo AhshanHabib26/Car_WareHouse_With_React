@@ -7,7 +7,7 @@ const useItemLoad = () => {
         fetch('https://habib-car-house.herokuapp.com/item')
         .then(res => res.json())
         .then( data => setItems(data))
-    },[])
+    },[items])
 
 
     return [items , setItems]

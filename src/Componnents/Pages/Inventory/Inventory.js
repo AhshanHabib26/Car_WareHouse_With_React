@@ -15,7 +15,7 @@ const Inventory = () => {
           <h1 className="title_container_text">Browse Top Car</h1>
         </div>
         <div className="list_container">
-          <Link className="list_container_text" to="/blog">
+          <Link className="list_container_text" to="/all_car_list">
             See All Car
           </Link>
         </div>

@@ -26,10 +26,13 @@ const Header = () => {
               <Nav.Link as={Link} to="/">
                 Home
               </Nav.Link>
+              <Nav.Link as={Link} to="/all_car_list">
+                Car List
+              </Nav.Link>
               <Nav.Link as={Link} to="/blog">
                 Blog
               </Nav.Link>
-              <NavDropdown className="container" title="Login / Signup" id="navbarScrollingDropdown">
+              <NavDropdown  title="Login / Signup" id="navbarScrollingDropdown">
                 <NavDropdown.Item as={Link} to='/login' >Login</NavDropdown.Item>
                 <NavDropdown.Item as={Link} to='/signup'>
                   Signup
