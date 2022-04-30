@@ -23,7 +23,7 @@ const Inventory = () => {
 
       <div className="invntory_product_container my-5">
         {sliceItems.map((item) => (
-          <InventoryProduct item={item} key={item._key} />
+          <InventoryProduct item={item} key={item._id} />
         ))}
       </div>
     </div>

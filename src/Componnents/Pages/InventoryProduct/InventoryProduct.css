@@ -4,7 +4,8 @@
     border-radius: 5px;
 }
 
-.single_title_container{
+.single_title_container,
+.single_description_area{
     display: flex;
     align-items: center;
     align-content: center;
@@ -18,4 +19,32 @@
     line-height: 1.2;
     border-width: 2px;
     padding-bottom: 5px;
+    color: rgb(255, 130, 108);
+}
+.single_title_container .single_price{
+    background-color: rgb(255, 130, 108);
+    padding: 5px;
+    color: #fff;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 0, 100% 80%, 80% 100%, 0 100%, 0% 80%, 0% 20%);
+}
+
+.single_description_area .dealers_text,
+.single_description_area .quantity_text{
+    font-size: 16px;
+    color: #363636;
+    font-weight: 700;
+}
+.description_area_text{
+    margin: 0;
+    font-size: 16px;
+    color: #666666;
+}
+.item_description_area .update_btn a{
+    text-decoration: none;
+    background-color: rgb(255, 114, 89);
+    color: #fff;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
 }
