@@ -24,9 +24,7 @@ const InventoryProduct = ({item}) => {
                 <div className='mt-4  mb-2 update_btn'>
                 <Link to={`/manage-stock/${_id}`}>Update Item</Link>
                 </div>
-            </div>
-           
-              
+            </div>  
         </div>
     );
 };
