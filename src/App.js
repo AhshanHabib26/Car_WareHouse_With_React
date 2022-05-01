@@ -7,12 +7,14 @@ import Signup from './Componnents/Pages/Register/Signup/Signup';
 import Login from './Componnents/Pages/Register/Login/Login';
 import AllInventoryItems from './Componnents/Pages/AllInventoryItem/AllInventoryItems/AllInventoryItems';
 import ManageItem from './Componnents/Pages/ManageItem/ManageItem';
+import { ToastContainer } from 'react-toastify';
 
 
 function App() {
   return (
     <div>
       <Header/>
+
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/home' element={<Home/>}/>
@@ -22,6 +24,7 @@ function App() {
         <Route path='/login' element={<Login/>}/>
         <Route path='/manage-stock/:id' element={<ManageItem/>}/>
       </Routes>
+      <ToastContainer />
     </div>
   );
 }

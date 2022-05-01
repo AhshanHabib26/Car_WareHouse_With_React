@@ -9,7 +9,7 @@ const Inventory = () => {
   const sliceItems = items.slice(0, 6);
 
   return (
-    <div className="container my-5">
+    <div className=" container-fluid">
       <div className="inventory_container">
         <div className="title_container">
           <h1 className="title_container_text">Browse Top Car</h1>

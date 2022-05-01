@@ -1,9 +1,46 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Signup.css";
 import GoogleImg from "../../../../Images/google.png";
 import GitHubImg from "../../../../Images/github.png";
+import auth from "../../../../firebase_init";
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
+  const [signInWithGoogle, user1, loading1, error1] = useSignInWithGoogle(auth);
+
+  const handleEmail = (e) => {
+    const newEmail = e.target.value;
+    setEmail(newEmail);
+  };
+  const handlePassword = (e) => {
+    const newPassword = e.target.value;
+    setPassword(newPassword);
+  };
+
+
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    }
+  });
+
+ 
+
+  const handleCreateUser = (e) => {
+
+      createUserWithEmailAndPassword(email, password);
+    
+    e.preventDefault();
+  };
+
   return (
     <div className="container my-5">
       <div className="main_container ">
@@ -12,7 +49,7 @@ const Signup = () => {
             Register Your <span className="form_title_text_span">Account</span>{" "}
           </h3>
         </div>
-        <form>
+        <form onClick={handleCreateUser}>
           <div className="form_container">
             <div className="input_box">
               <div className="input_item">
@@ -25,7 +62,13 @@ const Signup = () => {
                 <label htmlFor="userPass">
                   Your Password <span className="label_sign">*</span>
                 </label>
-                <input type="password" placeholder="****" required />
+                <input
+                  onChange={handlePassword}
+                  name="password"
+                  type="password"
+                  placeholder="****"
+                  required
+                />
               </div>
             </div>
             <div className="input_box">
@@ -33,7 +76,13 @@ const Signup = () => {
                 <label htmlFor="userEmail">
                   Your Email <span className="label_sign">*</span>
                 </label>
-                <input type="email" placeholder="demo@info.com" required />
+                <input
+                  onChange={handleEmail}
+                  name="email"
+                  type="email"
+                  placeholder="demo@info.com"
+                  required
+                />
               </div>
               <div className="input_item">
                 <label htmlFor="userPhone">
@@ -50,7 +99,7 @@ const Signup = () => {
         <div className="or_container text-center my-3">Or Continue With.</div>
         <div className="scl_container">
           <div className="google_btn">
-            <button>
+            <button onClick={() => signInWithGoogle()}>
               {" "}
               <img className="googleImgResize" src={GoogleImg} alt="" /> Google
             </button>
