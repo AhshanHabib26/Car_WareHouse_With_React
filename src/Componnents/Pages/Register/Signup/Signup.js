@@ -3,17 +3,18 @@ import "./Signup.css";
 import GoogleImg from "../../../../Images/google.png";
 import GitHubImg from "../../../../Images/github.png";
 import auth from "../../../../firebase_init";
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
-import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import {
+  useCreateUserWithEmailAndPassword,
+  useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-
-  const [createUserWithEmailAndPassword, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
+  const location = useLocation();
+  const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const [signInWithGoogle, user1, loading1, error1] = useSignInWithGoogle(auth);
 
   const handleEmail = (e) => {
@@ -25,19 +26,16 @@ const Signup = () => {
     setPassword(newPassword);
   };
 
-
+  let from = location.state?.from?.pathname || "/";
   useEffect(() => {
-    if (user) {
-      navigate("/");
+    if (user || user1) {
+      navigate(from, { replace: true });
     }
   });
 
- 
-
   const handleCreateUser = (e) => {
+    createUserWithEmailAndPassword(email, password);
 
-      createUserWithEmailAndPassword(email, password);
-    
     e.preventDefault();
   };
 

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const AllInventoryItem = ({ item }) => {
-  const { Name, Image, Price, Dealers, Description, Quantity } = item;
+  const { Name, Image, Price, Dealers, Description, Quantity, _id } = item;
   const sliceDescription = Description.slice(0, 70);
 
   return (
@@ -21,7 +21,7 @@ const AllInventoryItem = ({ item }) => {
       <div className="item_description_area">
         <p className="description_area_text">{sliceDescription}</p>
         <div className="mt-4  mb-2 update_btn">
-          <Link to="/blog">Update Item</Link>
+          <Link to={`/manage-stock/${_id}`}>Update Item</Link>
         </div>
       </div>
     </div>

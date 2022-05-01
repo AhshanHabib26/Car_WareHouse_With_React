@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import GoogleImg from "../../../../Images/google.png";
 import GitHubImg from "../../../../Images/github.png";
 import "./Login.css";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
 import auth from "../../../../firebase_init";
-import { toast } from "react-toastify";
+
 
 const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
@@ -14,6 +14,9 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const location = useLocation()
+
+  let from = location.state?.from?.pathname || "/";
 
   const handleEmail = (e) => {
     const userEmail = e.target.value;
@@ -25,11 +28,10 @@ const Login = () => {
   };
 
   useEffect(() => {
-    if (user) {
-      navigate("/");
+    if (user || user1) {
+      navigate(from, { replace: true });
     }
   });
-
 
   const handleLoginBtn = (e) => {
     signInWithEmailAndPassword(email, password);
