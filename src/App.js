@@ -6,6 +6,7 @@ import Blog from './Componnents/Pages/Blog/Blog';
 import Signup from './Componnents/Pages/Register/Signup/Signup';
 import Login from './Componnents/Pages/Register/Login/Login';
 import AllInventoryItems from './Componnents/Pages/AllInventoryItem/AllInventoryItems/AllInventoryItems';
+import ManageItem from './Componnents/Pages/ManageItem/ManageItem';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path='/blog' element={<Blog/>}/>
         <Route path='/signup' element={<Signup/>}/>
         <Route path='/login' element={<Login/>}/>
+        <Route path='/manage-stock/:id' element={<ManageItem/>}/>
       </Routes>
     </div>
   );
