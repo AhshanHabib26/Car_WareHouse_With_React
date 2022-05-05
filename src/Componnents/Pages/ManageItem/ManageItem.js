@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./ManageItem.css";
 
 const ManageItem = () => {
   const { id } = useParams();
   const [item, setItem] = useState({});
+ 
   const {
     register,
     handleSubmit,
@@ -19,6 +20,29 @@ const ManageItem = () => {
       .then((res) => res.json())
       .then((data) => setItem(data));
   }, []);
+
+
+  // const handleDeliverBtn = () =>{
+  //   const newQuantity = (item.Quantity - 1)
+  //   let Quantity = { newQuantity }
+  //   const url = `https://habib-car-house.herokuapp.com/item/${id}`;
+  //   fetch(url, {
+  //     method: "PUT",
+  //     headers: {
+  //       "content-type": "application/json",
+  //     },
+  //     body: JSON.stringify(Quantity),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((result) => {
+  //       console.log(result);
+  //     });
+  //   console.log(Quantity);
+
+  // }
+
+
+
 
   const onSubmit = (data) => {
     const url = `https://habib-car-house.herokuapp.com/item/${id}`;
@@ -56,9 +80,9 @@ const ManageItem = () => {
           <h5 className="quantity_text">Quantity: {item.Quantity}</h5>
         </div>
         <div className="mt-4  mb-2 deliverd_btn">
-          <button className="d_btn">
+          <Link to={`/update_stock/${id}`} className="d_btn">
             Delivered Item
-          </button>
+          </Link>
         </div>
       </div>
       <div className="update_container">

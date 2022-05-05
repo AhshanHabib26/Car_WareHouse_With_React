@@ -31,8 +31,8 @@ const Header = () => {
                 Home
               </Nav.Link>
               <Nav.Link as={Link} to="/all_car_list">
-                Car List
-              </Nav.Link>
+                  Car List
+                </Nav.Link>
               <Nav.Link as={Link} to="/blog">
                 Blog
               </Nav.Link>
