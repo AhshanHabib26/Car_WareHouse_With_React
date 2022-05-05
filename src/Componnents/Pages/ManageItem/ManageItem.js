@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./ManageItem.css";
 
 const ManageItem = () => {
@@ -80,9 +80,9 @@ const ManageItem = () => {
           <h5 className="quantity_text">Quantity: {item.Quantity}</h5>
         </div>
         <div className="mt-4  mb-2 deliverd_btn">
-          <Link to={`/update_stock/${id}`} className="d_btn">
+          <button className="d_btn">
             Delivered Item
-          </Link>
+          </button>
         </div>
       </div>
       <div className="update_container">
@@ -124,7 +124,7 @@ const ManageItem = () => {
             {...register("Quantity", { required: true })}
           />
           {errors.exampleRequired && <span>This field is required</span>}
-          <input className="mb-3 p-2" type="submit" value="Update Item" />
+          <input className="mb-3 p-2" type="submit" value="Restock Item" />
         </form>
       </div>
     </div>
