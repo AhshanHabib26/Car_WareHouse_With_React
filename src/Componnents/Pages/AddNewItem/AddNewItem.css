@@ -21,7 +21,7 @@
     content: '';
     border: 2px dashed;
     bottom: -5px;
-    left: 50%;
+    left: 30%;
     width: 120px;
     border-color: rgb(255, 151, 132);
     border-radius: 50%;
@@ -33,7 +33,7 @@
 .add_input_form_container input{
     width: 100%;
     height: 50px;
-    border: 1px solid rgb(182, 182, 182);
+    border: 1px solid rgb(240, 240, 240);
     outline: none;
     border-radius: 10px;
 }

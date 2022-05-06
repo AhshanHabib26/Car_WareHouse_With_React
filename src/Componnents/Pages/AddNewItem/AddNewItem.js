@@ -16,13 +16,13 @@ const AddNewItem = () => {
   };
 
   return (
-    <div className="add_new_item_container my-5 container">
+    <div className="add_new_item_container my-3 container">
       <div className="add_image_container">
             <img className="add_image" src={AddImage} alt="" />
       </div>
       <div className="add_items_container">
         <div className="text-center">
-          <h3 className="item_title_text mb-4">Update Your Product</h3>
+          <h3 className="item_title_text mb-4">Add New Product</h3>
         </div>
         <div>
           <form
@@ -60,7 +60,7 @@ const AddNewItem = () => {
               {...register("Quantity", { required: true })}
             />
             {errors.exampleRequired && <span>This field is required</span>}
-            <input className="mt-3 p-2" type="submit" value="Restock Item" />
+            <input className="mt-3 p-2" type="submit" value="Add Item" />
           </form>
         </div>
       </div>
