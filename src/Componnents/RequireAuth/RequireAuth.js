@@ -2,6 +2,7 @@ import React from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase_init";
+import Spinner from "../Spinner/Spinner";
 
 
 const RequireAuth = ({ children }) => {
@@ -11,7 +12,7 @@ const RequireAuth = ({ children }) => {
   if (loading) {
     return (
       <p style={{height: '50vh'}} className="d-flex align-items-center justify-content-center">
-        Loading......
+        <Spinner/>
       </p>
     );
   }
