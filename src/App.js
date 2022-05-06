@@ -9,6 +9,7 @@ import AllInventoryItems from "./Componnents/Pages/AllInventoryItem/AllInventory
 import ManageItem from "./Componnents/Pages/ManageItem/ManageItem";
 import { ToastContainer } from "react-toastify";
 import RequireAuth from "./Componnents/RequireAuth/RequireAuth";
+import AddNewItem from "./Componnents/Pages/AddNewItem/AddNewItem";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/add-new-item" element={<AddNewItem/>}/>
         <Route
           path="/manage-stock/:id"
           element={

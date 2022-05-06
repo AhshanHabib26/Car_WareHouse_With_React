@@ -22,7 +22,7 @@ const AllInventoryItem = ({ item }) => {
         <p className="description_area_text">{sliceDescription}</p>
         <div className="mt-4 d-flex justify-content-around  mb-2 update_btn">
           <Link to={`/manage-stock/${_id}`}>Update Item</Link>
-          <Link to={`/manage-stock/${_id}`}>Add New Item</Link>
+          <Link to='/add-new-item'>Add New Item</Link>
         </div>
       </div>
     </div>
