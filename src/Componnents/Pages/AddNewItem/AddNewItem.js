@@ -1,7 +1,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import "./AddNewItem.css";
-import AddImage from '../../../Images/add_product.png'
+import AddImage from "../../../Images/add_product.png";
+import { toast } from "react-toastify";
 
 const AddNewItem = () => {
   const {
@@ -12,13 +13,26 @@ const AddNewItem = () => {
   } = useForm();
 
   const onSubmit = (data) => {
+    const url = "https://habib-car-house.herokuapp.com/item";
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+        toast('Your Product Added')
+      });
     console.log(data);
   };
 
   return (
     <div className="add_new_item_container my-3 container">
       <div className="add_image_container">
-            <img className="add_image" src={AddImage} alt="" />
+        <img className="add_image" src={AddImage} alt="" />
       </div>
       <div className="add_items_container">
         <div className="text-center">
