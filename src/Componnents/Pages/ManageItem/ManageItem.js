@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import "./ManageItem.css";
 
 const ManageItem = () => {
   const { id } = useParams();
   const [item, setItem] = useState({});
+  console.log(item)
  
   const {
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors },
   } = useForm();
 
@@ -55,9 +58,12 @@ const ManageItem = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
+        if(result){
+          toast('Your Product Restock Successfully!!!')
+        }
       });
     console.log(data);
+    reset()
   };
 
   return (
@@ -66,8 +72,9 @@ const ManageItem = () => {
         <div className="product_section_title">
           <h3 className="form_title_text mb-4">Product Details</h3>
         </div>
-        <div className="item_name">
+        <div  className="item_name ">
           <h4>{item.Name}</h4>
+          <h4>{item.Price}</h4>
         </div>
         <div className="item_image">
           <img src={item.Image} alt="" />
@@ -116,6 +123,12 @@ const ManageItem = () => {
             type="text"
             placeholder="Dealer Name"
             {...register("Dealers", { required: true })}
+          />
+          <input
+            className="mb-3 p-2"
+            type="text"
+            placeholder="Price"
+            {...register("Price", { required: true })}
           />
           <input
             className="mb-3 p-2"

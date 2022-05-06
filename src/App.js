@@ -10,6 +10,7 @@ import ManageItem from "./Componnents/Pages/ManageItem/ManageItem";
 import { ToastContainer } from "react-toastify";
 import RequireAuth from "./Componnents/RequireAuth/RequireAuth";
 import AddNewItem from "./Componnents/Pages/AddNewItem/AddNewItem";
+import Footer from "./Componnents/Pages/Footer/Footer";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           }
         />
       </Routes>
+      <Footer/>
       <ToastContainer />
     </div>
   );

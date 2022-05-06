@@ -8,7 +8,6 @@ const AddNewItem = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
 
@@ -44,28 +43,34 @@ const AddNewItem = () => {
             onSubmit={handleSubmit(onSubmit)}
           >
             <input
-              className="mb-4 p-2 "
+              className="mb-3 p-2 "
               type="text"
               placeholder="Item Name"
               {...register("Name", { required: true })}
             />
             <input
-              className="mb-4 p-2"
+              className="mb-3 p-2"
               type="text"
               placeholder="Item Description"
               {...register("Description", { required: true })}
             />
             <input
-              className="mb-4 p-2"
+              className="mb-3 p-2"
               type="text"
               placeholder="Item Image Link"
               {...register("Image", { required: true })}
             />
             <input
-              className="mb-4 p-2"
+              className="mb-3 p-2"
               type="text"
               placeholder="Dealer Name"
               {...register("Dealers", { required: true })}
+            />
+            <input
+              className="mb-3 p-2"
+              type="text"
+              placeholder="Price"
+              {...register("Price", { required: true })}
             />
             <input
               className="mb-3 p-2"

@@ -3,6 +3,10 @@
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
 }
+.item_name {
+    display: flex;
+    justify-content: space-between;
+}
 .item_description .text{
     font-size: 15px;
     text-align: center;
