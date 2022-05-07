@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import {getAuth } from 'firebase/auth'
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCkwjycJPodDoMpBtvgBlpAc-IcGJwzlSw",
-  authDomain: "car-house-c5294.firebaseapp.com",
-  projectId: "car-house-c5294",
-  storageBucket: "car-house-c5294.appspot.com",
-  messagingSenderId: "82339134375",
-  appId: "1:82339134375:web:2080561491952daf475482"
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId
 };
 
 
