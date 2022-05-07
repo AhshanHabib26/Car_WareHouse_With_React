@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 
 const ResetPassword = () => {
   const [email, setEmail] = useState("");
-  const [sendPasswordResetEmail, sending, error] =
+  const [sendPasswordResetEmail] =
     useSendPasswordResetEmail(auth);
 
   const handleEmail = (e) => {
