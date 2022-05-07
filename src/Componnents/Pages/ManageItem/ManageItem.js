@@ -9,7 +9,6 @@ const ManageItem = () => {
   const [item, setItem] = useState({});
   console.log(item)
 
- 
   const {
     register,
     handleSubmit,
@@ -26,21 +25,27 @@ const ManageItem = () => {
 
 
   const handleDeliverBtn = () =>{
-    const newQuantity = (item.Quantity - 1)
-    let Quantity = { newQuantity }
+    const Quantity = Number(item.Quantity)
+    let updateQuantity = Quantity - 1
+    const data = {
+        Dealers: item.Dealers,
+        Description: item.Description,
+        Image: item.Image,
+        Price: item.Price,
+        Quantity: updateQuantity
+    }
     const url = `https://habib-car-house.herokuapp.com/item/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(Quantity),
+      body: JSON.stringify(data),
     })
       .then((res) => res.json())
       .then((result) => {
         if(result){
          toast('Your Qunatity Updated')
-         console.log(result)
         }
       });
   }
@@ -84,7 +89,9 @@ const ManageItem = () => {
         </div>
         <div className="single_description_area my-3">
           <h5 className="dealers_text">Dealers: {item.Dealers}</h5>
-          <h5 className="quantity_text">Quantity: {item.Quantity}</h5>
+          <h5 className="quantity_text">Quantity: {
+            item.Quantity > 0 ? item.Quantity : <p className="text-danger ">Stock Out</p>
+          }</h5>
         </div>
         <div className="mt-4  mb-2 deliverd_btn">
           <button onClick={handleDeliverBtn} className="d_btn">
