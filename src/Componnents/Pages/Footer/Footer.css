@@ -112,3 +112,39 @@
     text-align: right;
     margin-top: 40px;
 }
+
+
+
+/* Responsive Code Start Here  */
+
+@media only screen and (max-width: 468px) {
+    .main_footer_container{ grid-template-columns: repeat(1, 1fr);}
+    .shortcut_link_container{ flex-wrap: wrap-reverse;}
+    .title_text::after { right: 19px;}
+    .blog_title_text::after {left: 57px;}
+    .copy_right_area{ text-align: center;}
+}
+
+@media only screen and (max-width: 576px) {
+    .main_footer_container{ grid-template-columns: repeat(1, 1fr);}
+    .shortcut_link_container{ flex-wrap: wrap-reverse;}
+    .title_text::after { right: 19px;}
+    .blog_title_text::after {left: 57px;}
+    .copy_right_area{ text-align: center;}
+}
+
+@media only screen and (max-width: 768px) {
+    .main_footer_container{ grid-template-columns: repeat(1, 1fr);}
+    .shortcut_link_container{ flex-wrap: wrap-reverse;}
+    .title_text::after { right: 19px;}
+    .blog_title_text::after {left: 57px;}
+    .copy_right_area{ text-align: center;}
+}
+
+@media only screen and (max-width: 992px) {
+    .shortcut_link_container{ flex-wrap: wrap;}
+    .title_text::after { right: 19px;}
+    .blog_title_text::after {left: 57px;}
+    .our_quick_sec{ display: none;}
+    .copy_right_area{ text-align: center;}
+  }

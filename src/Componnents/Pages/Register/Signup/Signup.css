@@ -82,3 +82,14 @@
 .github_btn .githubImgResize{
     width: 25px;
 }
+
+/* Responsive Code Start Here  */
+
+@media only screen and (min-width: 430px) and (max-width: 668px) {
+    .main_container{ width: 96%;}
+    .form_container{ grid-template-columns: repeat(1, 1fr);}
+}
+@media only screen and (min-width: 668px) and (max-width: 992px) {
+    .main_container{ width: 96%;}
+    .form_container{ grid-template-columns: repeat(2, 1fr);}
+}

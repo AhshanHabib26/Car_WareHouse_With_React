@@ -28,3 +28,39 @@
     border-radius: 5px;
     cursor: pointer;
 }
+
+
+/* Responsive Code Start Here  */
+
+@media only screen and (min-width: 450px) and (max-width: 468px) {
+    .banner_text_container{ top: 6%;}
+    .text_container_slogan{ font-size: 20px; }
+    .text_container_title{ width: 50%; font-size: 21px;}
+    .banner_btn{padding: 10px;}
+}
+
+@media only screen and (min-width: 469px) and (max-width: 576px) {
+    .banner_text_container{ top: 10%;}
+    .text_container_slogan{ font-size: 22px; }
+    .text_container_title{ width: 55%; font-size: 25px;}
+    .banner_btn{padding: 10px;}
+  }
+
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+    .banner_text_container{ top: 25%;}
+    .text_container_slogan{ font-size: 25px; }
+    .text_container_title{ width: 60%; font-size: 30px;}
+    .banner_btn{padding: 15px;}
+}
+
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+    .banner_text_container{ top: 25%;}
+    .text_container_slogan{ font-size: 25px; }
+    .text_container_title{ width: 64%; font-size: 34px;}
+}
+
+@media only screen and (min-width: 993px) and (max-width: 1192px) {
+    .banner_text_container{ top: 25%;}
+    .text_container_slogan{ font-size: 25px; }
+    .text_container_title{ width: 64%; font-size: 40px;}
+}

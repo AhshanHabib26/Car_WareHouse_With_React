@@ -9,7 +9,7 @@ const Inventory = () => {
   const sliceItems = items.slice(0, 6);
 
   return (
-    <div className=" container-fluid">
+    <div className="container-fluid">
       <div className="inventory_container">
         <div className="title_container">
           <h1 className="title_container_text">Browse Top Car</h1>
@@ -20,8 +20,8 @@ const Inventory = () => {
           </Link>
         </div>
       </div>
-
-      <div className="invntory_product_container my-5">
+    
+      <div className="invntory_product_container pe-5 py-5">
         {sliceItems.map((item) => (
           <InventoryProduct item={item} key={item._id} />
         ))}

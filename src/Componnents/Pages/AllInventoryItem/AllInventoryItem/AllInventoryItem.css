@@ -6,3 +6,10 @@
    color: #fff;
    border-radius: 5px;
 }
+
+@media only screen and (max-width: 768px) {
+   .single_item_container{ padding: 20px;}
+}
+@media only screen and (min-width: 450px) and (max-width: 768px) {
+   .single_item_container{ padding: 10px;}
+}
