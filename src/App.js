@@ -13,7 +13,6 @@ import AddNewItem from "./Componnents/Pages/AddNewItem/AddNewItem";
 import Footer from "./Componnents/Pages/Footer/Footer";
 import MyItems from "./Componnents/Pages/MyItems/MyItems/MyItems";
 
-
 function App() {
   return (
     <div>
@@ -33,8 +32,15 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/add-new-item" element={<AddNewItem/>}/>
-        <Route path="/my-items" element={<MyItems/>}/>
+        <Route path="/add-new-item" element={<AddNewItem />} />
+        <Route
+          path="/my-items"
+          element={
+            <RequireAuth>
+              <MyItems />
+            </RequireAuth>
+          }
+        />
         <Route
           path="/manage-stock/:id"
           element={
@@ -44,7 +50,7 @@ function App() {
           }
         />
       </Routes>
-      <Footer/>
+      <Footer />
       <ToastContainer />
     </div>
   );

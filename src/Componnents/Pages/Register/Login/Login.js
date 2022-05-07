@@ -8,12 +8,14 @@ import {
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import auth from "../../../../firebase_init";
-import { async } from "@firebase/util";
+import Spinner from "../../../Spinner/Spinner";
+import { toast } from "react-toastify";
+
 
 const Login = () => {
-  const [signInWithEmailAndPassword, user, loading, error] =
+  const [signInWithEmailAndPassword, user, loading] =
     useSignInWithEmailAndPassword(auth);
-  const [signInWithGoogle, user1, loading1, error1] = useSignInWithGoogle(auth);
+  const [signInWithGoogle, user1, loading1] = useSignInWithGoogle(auth);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -30,6 +32,14 @@ const Login = () => {
     setPassword(userPassword);
   };
 
+
+  useEffect( () => {
+    if(loading || loading1){
+        <Spinner/> 
+    }
+  })
+
+
   useEffect(() => {
     if (user || user1) {
       const url = 'https://habib-car-house.herokuapp.com/getToken'
@@ -44,6 +54,7 @@ const Login = () => {
       })
         .then((res) => res.json())
         .then((data) => {
+          toast('Welcome!')
           localStorage.setItem("token", data.accessToken)
           navigate(from, { replace: true });
         });

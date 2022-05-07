@@ -1,0 +1,10 @@
+.delete_btn{
+    color: rgb(255, 30, 30);
+    font-weight: 600;
+    font-variant: small-caps;
+    cursor: pointer;
+    transition: 0.5s ease-in;
+}
+.delete_btn:hover{
+    color: rgb(255, 102, 102);
+}
