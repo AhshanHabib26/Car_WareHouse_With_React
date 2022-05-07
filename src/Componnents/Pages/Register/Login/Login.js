@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import GoogleImg from "../../../../Images/google.png";
 import GitHubImg from "../../../../Images/github.png";
 import "./Login.css";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
@@ -120,7 +120,7 @@ const Login = () => {
             </div>
           </div>
         </form>
-        <div className="or_container text-center my-3">Or Continue With.</div>
+        <div className="or_container text-center my-3">Or Continue With. <Link className="text-decoration-none text-danger" to='/reset-password'>Forget Your Password?</Link> </div>
         <div className="scl_container">
           <div className="google_btn">
             <button onClick={() => signInWithGoogle()}>

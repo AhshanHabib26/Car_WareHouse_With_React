@@ -13,6 +13,7 @@ import AddNewItem from "./Componnents/Pages/AddNewItem/AddNewItem";
 import Footer from "./Componnents/Pages/Footer/Footer";
 import MyItems from "./Componnents/Pages/MyItems/MyItems/MyItems";
 import PageNotFound from "./Componnents/Pages/PageNotFound/PageNotFound";
+import ResetPassword from "./Componnents/Pages/Register/ResetPassword/ResetPassword";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/add-new-item" element={<AddNewItem />} />
+        <Route path="reset-password" element={<ResetPassword/>}/>
         <Route
           path="/my-items"
           element={
