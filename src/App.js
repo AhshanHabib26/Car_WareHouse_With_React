@@ -12,6 +12,7 @@ import RequireAuth from "./Componnents/RequireAuth/RequireAuth";
 import AddNewItem from "./Componnents/Pages/AddNewItem/AddNewItem";
 import Footer from "./Componnents/Pages/Footer/Footer";
 import MyItems from "./Componnents/Pages/MyItems/MyItems/MyItems";
+import PageNotFound from "./Componnents/Pages/PageNotFound/PageNotFound";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route
           path="/all_car_list"
@@ -49,6 +51,7 @@ function App() {
             </RequireAuth>
           }
         />
+        <Route path="*" element={<PageNotFound/>}/>
       </Routes>
       <Footer />
       <ToastContainer />
