@@ -8,21 +8,30 @@ import {
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
+import Spinner from "../../../Spinner/Spinner";
+import { toast } from "react-toastify";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
-  const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
-  const [signInWithGoogle, user1, loading1, error1] = useSignInWithGoogle(auth);
+  const [createUserWithEmailAndPassword, user, loading] =
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+  const [signInWithGoogle, user1, loading1] = useSignInWithGoogle(auth);
 
   const handleEmail = (e) => {
     const newEmail = e.target.value;
+    if (newEmail === "") {
+      toast("Please Enter Your Email");
+    }
     setEmail(newEmail);
   };
   const handlePassword = (e) => {
     const newPassword = e.target.value;
+    if (newPassword === "") {
+      toast("Please Enter Your Password");
+    }
     setPassword(newPassword);
   };
 
@@ -32,6 +41,12 @@ const Signup = () => {
       navigate(from, { replace: true });
     }
   });
+
+  if (loading || loading1) {
+    <>
+      <Spinner />
+    </>;
+  }
 
   const handleCreateUser = (e) => {
     createUserWithEmailAndPassword(email, password);

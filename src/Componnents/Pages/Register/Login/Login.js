@@ -11,7 +11,6 @@ import auth from "../../../../firebase_init";
 import Spinner from "../../../Spinner/Spinner";
 import { toast } from "react-toastify";
 
-
 const Login = () => {
   const [signInWithEmailAndPassword, user, loading] =
     useSignInWithEmailAndPassword(auth);
@@ -25,28 +24,34 @@ const Login = () => {
 
   const handleEmail = (e) => {
     const userEmail = e.target.value;
-    setEmail(userEmail);
+    if (userEmail === "") {
+      toast("Please Enter Your Email");
+    } else {
+      setEmail(userEmail);
+    }
   };
   const handlePassword = (e) => {
     const userPassword = e.target.value;
-    setPassword(userPassword);
+    if (userPassword === "") {
+      toast("Enter Your Password");
+    } else {
+      setPassword(userPassword);
+    }
   };
 
-
-  useEffect( () => {
-    if(loading || loading1){
-        <Spinner/> 
+  useEffect(() => {
+    if (loading || loading1) {
+      <Spinner />;
     }
-  })
-
+  });
 
   useEffect(() => {
     if (user || user1) {
-      const url = 'https://habib-car-house.herokuapp.com/getToken'
+      const url = "https://habib-car-house.herokuapp.com/getToken";
       fetch(url, {
         method: "POST",
         body: JSON.stringify({
-          email: user.email
+          email: user.email,
         }),
         headers: {
           "Content-type": "application/json; charset=UTF-8",
@@ -54,11 +59,10 @@ const Login = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          toast('Welcome!')
-          localStorage.setItem("token", data.accessToken)
+          toast("Welcome! Back...");
+          localStorage.setItem("token", data.accessToken);
           navigate(from, { replace: true });
         });
-
     }
   });
 
