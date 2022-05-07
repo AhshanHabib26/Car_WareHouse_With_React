@@ -3,16 +3,20 @@ import { useForm } from "react-hook-form";
 import "./AddNewItem.css";
 import AddImage from "../../../Images/add_product.png";
 import { toast } from "react-toastify";
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from "../../../firebase_init";
 
 const AddNewItem = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
+  const [user] = useAuthState(auth);
 
   const onSubmit = (data) => {
-    const url = "https://habib-car-house.herokuapp.com/item";
+    const url = "https://habib-car-house.herokuapp.com/additem";
     fetch(url, {
       method: "POST",
       headers: {
@@ -22,10 +26,12 @@ const AddNewItem = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
-        toast('Your Product Added')
+       if(result.insertedId){
+        toast('Your Item Successfully Added')
+
+       }
+       reset() 
       });
-    console.log(data);
   };
 
   return (
@@ -42,6 +48,11 @@ const AddNewItem = () => {
             className="d-flex flex-column add_input_form_container "
             onSubmit={handleSubmit(onSubmit)}
           >
+            <input
+              className="mb-3 p-2 "
+              value={user?.email}
+              {...register("Email")}
+            />
             <input
               className="mb-3 p-2 "
               type="text"

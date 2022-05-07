@@ -8,6 +8,7 @@ const ManageItem = () => {
   const { id } = useParams();
   const [item, setItem] = useState({});
   console.log(item)
+
  
   const {
     register,
@@ -25,24 +26,25 @@ const ManageItem = () => {
   }, []);
 
 
-  // const handleDeliverBtn = () =>{
-  //   const newQuantity = (item.Quantity - 1)
-  //   let Quantity = { newQuantity }
-  //   const url = `https://habib-car-house.herokuapp.com/item/${id}`;
-  //   fetch(url, {
-  //     method: "PUT",
-  //     headers: {
-  //       "content-type": "application/json",
-  //     },
-  //     body: JSON.stringify(Quantity),
-  //   })
-  //     .then((res) => res.json())
-  //     .then((result) => {
-  //       console.log(result);
-  //     });
-  //   console.log(Quantity);
-
-  // }
+  const handleDeliverBtn = () =>{
+    const newQuantity = (item.Quantity - 1)
+    let Quantity = { newQuantity }
+    const url = `https://habib-car-house.herokuapp.com/item/${id}`;
+    fetch(url, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(Quantity),
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if(result){
+         toast('Your Qunatity Updated')
+         console.log(result)
+        }
+      });
+  }
 
 
 
@@ -62,7 +64,6 @@ const ManageItem = () => {
           toast('Your Product Restock Successfully!!!')
         }
       });
-    console.log(data);
     reset()
   };
 
@@ -87,7 +88,7 @@ const ManageItem = () => {
           <h5 className="quantity_text">Quantity: {item.Quantity}</h5>
         </div>
         <div className="mt-4  mb-2 deliverd_btn">
-          <button className="d_btn">
+          <button onClick={handleDeliverBtn} className="d_btn">
             Delivered Item
           </button>
         </div>

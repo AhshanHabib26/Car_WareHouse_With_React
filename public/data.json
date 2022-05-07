@@ -23,15 +23,51 @@
     },
     {
         "Name": " When Should You Use NodeJS And When Should You Use Mongodb",
-        "Image": "https://i.ibb.co/Ycrkj3q/Node-Vs-Mongo.png"
+        "Data":[
+            {
+                "NodeJS": "Node.js is an open source, a server-side script which runs on the top of Google’s open-source scripting engine V8. Node.js is fast, lightweight and efficient. It uses the asynchronous mode of operation, event-driven Input/Output rather than using the traditional threads or separate threads for each process. Node.js was originally written by Ryan Dahl in the year 2009. It is a cross-platform Javascript run-time environment that executes Javascript code outside of a browser. Node.js uses javascript for creating node applications or we can use any other language that ultimately compiles to javascript (like typescript). The javascript is written in the same way as we’d use in any client-side application. However, we need to set up the node development environment.",
+                "MongoDB": "MongoDB is built on a scale-out architecture that has become popular with developers of all kinds for developing scalable applications with evolving data schemas. As a document database, MongoDB makes it easy for developers to store structured or unstructured data. It uses a JSON-like format to store documents. This format directly maps to native objects in most modern programming languages, making it a natural choice for developers, as they don’t need to think about normalizing data. MongoDB can also handle high volume and can scale both vertically or horizontally to accommodate large data loads. MongoDB was built for people building internet and business applications who need to evolve quickly and scale elegantly. Companies and development teams of all sizes use MongoDB for a wide variety of reasons."
+            }
+        ],
+        "Image": "https://i.ibb.co/Ycrkj3q/Node-Vs-Mongo.png",
+        "Author":"Ahshan Habib"
 
     },
     {
         "Name": "Difference Between SQL and NoSQL Database.",
-        "Image": "https://i.ibb.co/w61LVvD/SQL-vs-No-SQL.png"
+        "Data": {
+            
+                "SQL":[
+                    "RELATIONAL DATABASE MANAGEMENT SYSTEM (RDBMS)",
+                    "These databases have fixed or static or predefined schema",
+                    "These databases are not suited for hierarchical data storage.",
+                    "These databases are best suited for complex queries",
+                    "Vertically Scalable"
+                ],
+                "NoSQL":[
+                    "Non-relational or distributed database system.",
+                    "They have dynamic schema",
+                    "These databases are best suited for hierarchical data storage.",
+                    "These databases are not so good for complex queries",
+                    "Horizontally scalable"
+                ]
+            
+        },
+        "Image": "https://i.ibb.co/w61LVvD/SQL-vs-No-SQL.png",
+        "Author":"Ahshan Habib"
     },
     {
         "Name": "What is The Purpose of JWT and How Does it work",
-        "Image": "https://i.ibb.co/GHZfmxB/JWT-img.png"
+        "Data":{
+            "JWT":[
+                "JWT, or JSON Web Token, is an open standard used to share security information between two parties — a client and a server. Each JWT contains encoded JSON objects, including a set of claims. JWTs are signed using a cryptographic algorithm to ensure that the claims cannot be altered after the token is issued."
+            ],
+            "JWTWorks":[
+                "JWTs differ from other web tokens in that they contain a set of claims. Claims are used to transmit information between two parties. What these claims are depends on the use case at hand. For example, a claim may assert who issued the token, how long it is valid for, or what permissions the client has been granted. A JWT is a string made up of three parts, separated by dots (.), and serialized using base64. In the most common serialization format, compact serialization, the JWT looks something like this: xxxxx.yyyyy.zzzzz."
+
+            ]
+        },
+        "Image": "https://i.ibb.co/GHZfmxB/JWT-img.png",
+        "Author":"Ahshan Habib"
     }
 ]
