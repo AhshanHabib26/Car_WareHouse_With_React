@@ -3,18 +3,21 @@ import GoogleImg from "../../../../Images/google.png";
 import GitHubImg from "../../../../Images/github.png";
 import "./Login.css";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
+import {
+  useSignInWithEmailAndPassword,
+  useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
 import auth from "../../../../firebase_init";
-
+import { async } from "@firebase/util";
 
 const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
-    const [signInWithGoogle, user1, loading1, error1] = useSignInWithGoogle(auth);
+  const [signInWithGoogle, user1, loading1, error1] = useSignInWithGoogle(auth);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  const location = useLocation()
+  const location = useLocation();
 
   let from = location.state?.from?.pathname || "/";
 
@@ -29,7 +32,22 @@ const Login = () => {
 
   useEffect(() => {
     if (user || user1) {
-      navigate(from, { replace: true });
+      const url = 'https://habib-car-house.herokuapp.com/getToken'
+      fetch(url, {
+        method: "POST",
+        body: JSON.stringify({
+          email: user.email
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          localStorage.setItem("token", data.accessToken)
+          navigate(from, { replace: true });
+        });
+
     }
   });
 
