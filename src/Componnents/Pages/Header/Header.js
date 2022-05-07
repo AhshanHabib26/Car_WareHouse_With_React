@@ -38,7 +38,7 @@ const Header = () => {
               {user && (
                 <>
                   <Nav.Link as={Link} to="/all_car_list">
-                    Car List
+                    Manage Car
                   </Nav.Link>
                   <Nav.Link as={Link} to="/my-items">
                     My Items 

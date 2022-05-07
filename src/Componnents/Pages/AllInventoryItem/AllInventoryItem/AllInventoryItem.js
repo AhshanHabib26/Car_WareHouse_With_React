@@ -1,9 +1,30 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import './AllInventoryItem.css'
 
 const AllInventoryItem = ({ item }) => {
-  const { Name, Image, Price, Dealers, Description, Quantity, _id } = item;
+  const { Name, Image, Price, Dealers, Description, Quantity, _id} = item;
   const sliceDescription = Description.slice(0, 70);
+
+
+  const handleDeleteItem = (id) =>{
+    const procceed = window.confirm("Are You Sure You Want To Delete?");
+    if (procceed) {
+      console.log(id);
+      const url = `https://habib-car-house.herokuapp.com/item/${id}`;
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.deletedCount > 0) {
+            toast("Delete Successfully!");
+          }
+        });
+    }
+  }
+
 
   return (
     <div className="single_item_container">
@@ -21,7 +42,7 @@ const AllInventoryItem = ({ item }) => {
       <div className="item_description_area">
         <p className="description_area_text">{sliceDescription}</p>
         <div className="mt-4 d-flex justify-content-around  mb-2 update_btn">
-          <Link to={`/manage-stock/${_id}`}>Update Item</Link>
+          <button className="deleteItemBtn" onClick={ () => handleDeleteItem(_id)} >Delete Item</button>
           <Link to='/add-new-item'>Add New Item</Link>
         </div>
       </div>

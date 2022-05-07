@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { toast } from "react-toastify";
 import auth from "../../../../firebase_init";
 import './MyItems.css'
+
+
+// User Based Item Loadded
 
 const MyItems = () => {
   const [user] = useAuthState(auth);
@@ -15,20 +19,20 @@ const MyItems = () => {
       .then((data) => setItems(data));
   }, [user, items]);
 
+
+  // User Item Deleted With Id
+
   const handelDelete = (id) =>{
     const procceed = window.confirm("Are You Sure You Want To Delete?");
     if (procceed) {
-      console.log(id);
-      const url = `https://habib-car-house.herokuapp.com/item/${id}`;
+      const url = `https://habib-car-house.herokuapp.com/additem/${id}`;
       fetch(url, {
         method: "DELETE",
       })
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount > 0) {
-            const existFood = items.filter((item) => item._id !== id);
-            setItems(existFood);
-            alert("Delete Successfully!");
+            toast("Successfully Deleted!");
           }
         });
     }
@@ -55,7 +59,6 @@ const MyItems = () => {
             <th>Name</th>
             <th>Price</th>
             <th>Quantity</th>
-            <th>Update</th>
             <th>Delete</th>
           </tr>
         </thead>
@@ -66,7 +69,7 @@ const MyItems = () => {
                     <td>{item.Name}</td>
                     <td>{item.Price}</td>
                     <td>{item.Quantity}</td>
-                    <td onClick={handelDelete} className="text-center delete_btn">Delete</td>
+                    <td onClick={ () => handelDelete(item._id)} className="text-center delete_btn">Delete</td>
                   </tr>
                   )
             }
