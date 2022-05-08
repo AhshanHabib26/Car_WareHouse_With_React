@@ -41,7 +41,7 @@ const AddNewItem = () => {
       </div>
       <div className="add_items_container">
         <div className="text-center">
-          <h3 className="item_title_text mb-4">Add New Product</h3>
+          <h3 className="Additem_title_text mb-4">Add Your Product</h3>
         </div>
         <div>
           <form

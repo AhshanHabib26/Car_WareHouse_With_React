@@ -11,17 +11,17 @@
     box-shadow: 0 5px 20px rgb(250, 244, 244);
 }
 
-.item_title_text{
+.Additem_title_text{
     color: #363636;
     font-variant: small-caps;
     position: relative;
 }
-.item_title_text::after{
+.Additem_title_text::after{
     position: absolute;
     content: '';
     border: 2px dashed;
     bottom: -5px;
-    left: 30%;
+    left: 49%;
     width: 120px;
     border-color: rgb(255, 151, 132);
     border-radius: 50%;
@@ -44,4 +44,12 @@
     outline: none;
     background-color: rgb(255, 133, 111);
     color: #fff;
+}
+
+
+@media only screen and (min-width: 450px) and (max-width: 992px) {
+    .add_new_item_container{ grid-template-columns: repeat(1, 1fr);}
+    .add_image_container{ display: none;}
+    .add_items_container{ margin-top: 30px; margin-bottom: 20px;}
+
 }

@@ -10,7 +10,7 @@ Explore Live Site  **[Click Here](https://car-house-c5294.web.app/)**
  * Authentications: **Firebase**, **React Firbase Hook**
  * Hosting: 
     * Client: **Github**, **Firebase** 
-    * Server: **MongoDB** ,**Heroku**
+    * Server: **NodeJS**, **ExpressJS**, **MongoDB** ,**Heroku**
  * Project Details:
     * CarHouse WareHouse
     * Description:  CarHouse Website Provide Best Product Store website. Here You Can Add Product And Update And Also User Based Add Product And Find Out Product . I Also Use Authentication And JWT Methods To Secure User Info And Give An Best User Friendly Flavour .

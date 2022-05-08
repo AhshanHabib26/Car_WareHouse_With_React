@@ -52,7 +52,7 @@ const MyItems = () => {
           <h4>You Have No Added Product</h4>
         )}
       </div>
-      <Table className="container my-5">
+      <Table  className="container my-5">
         <thead>
           <tr className="text-center">
             <th>ID</th>

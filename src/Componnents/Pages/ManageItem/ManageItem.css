@@ -3,6 +3,32 @@
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
 }
+.manage_title_text,
+.manage_update_title_text{
+    color: #363636;
+    font-variant: small-caps;
+    position: relative;
+}
+.manage_title_text::after{
+    position: absolute;
+    content: '';
+    border: 2px dashed;
+    bottom: -5px;
+    left: 16%;
+    width: 120px;
+    border-color: rgb(255, 151, 132);
+    border-radius: 50%;
+}
+.manage_update_title_text::after{
+    position: absolute;
+    content: '';
+    border: 2px dashed;
+    bottom: -5px;
+    left: 32%;
+    width: 120px;
+    border-color: rgb(255, 151, 132);
+    border-radius: 50%;
+}
 .item_name {
     display: flex;
     justify-content: space-between;

@@ -75,7 +75,7 @@ const ManageItem = () => {
     <div className="main_container_sec p-4 container">
       <div className="product_container">
         <div className="product_section_title">
-          <h3 className="form_title_text mb-4">Product Details</h3>
+          <h3 className="manage_title_text mb-4">Product Details</h3>
         </div>
         <div  className="item_name ">
           <h4>{item.Name}</h4>
@@ -101,7 +101,7 @@ const ManageItem = () => {
       </div>
       <div className="update_container">
         <div className="section_title">
-          <h3 className="form_title_text mb-4">Update Your Product</h3>
+          <h3 className="manage_update_title_text mb-4">Update Your Product</h3>
         </div>
         <form
           className="d-flex flex-column input_form_container "
