@@ -7,8 +7,7 @@ import "./ManageItem.css";
 const ManageItem = () => {
   const { id } = useParams();
   const [item, setItem] = useState({});
-  console.log(item)
-
+  
   const {
     register,
     handleSubmit,
@@ -54,13 +53,24 @@ const ManageItem = () => {
 
 
   const onSubmit = (data) => {
+    const preQunatity = Number(item.Quantity)
+    const newQunatity = Number(data.Quantity)
+    const updateQuantity = (preQunatity + newQunatity)
+
+    const newData = {
+        Dealers: data.Dealers,
+        Description: data.Description,
+        Image: data.Image,
+        Price: data.Price,
+        Quantity: updateQuantity
+    }
     const url = `https://habib-car-house.herokuapp.com/item/${id}`;
     fetch(url, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(newData),
     })
       .then((res) => res.json())
       .then((result) => {
