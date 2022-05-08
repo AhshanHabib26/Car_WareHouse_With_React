@@ -3,7 +3,6 @@ import "./Footer.css";
 import PhoneImg from "../../../Images/phone-call.png";
 import EmailImg from "../../../Images/email.png";
 import LocationImg from "../../../Images/google-maps.png";
-import SearchImg from "../../../Images/search.png";
 
 const date = new Date()
 const newYear = date.getFullYear()
@@ -48,13 +47,6 @@ const Footer = () => {
         </div>
       </div>
       <div className="details_info">
-        <div className="seubscribe_container">
-          <h3 className="text-muted">Subscribe Us</h3>
-          <div className="input_box_area">
-            <input className="footer_bar" placeholder="Your Email" type="text" />
-            <img className="footer_bar_img" src={SearchImg} alt="" />
-          </div>
-        </div>
         <div className="shortcut_link_container">
           <div className="our_info_sec">
               <div className="our_info_title">

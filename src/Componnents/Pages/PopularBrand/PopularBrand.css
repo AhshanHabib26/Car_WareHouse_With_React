@@ -1,0 +1,22 @@
+.branding_title{
+   font-size: 26px;
+   padding-left: 15px;
+   margin-bottom: 25px; 
+   color: #363636;
+   font-variant: small-caps;
+   position: relative;
+}
+.branding_title::before{
+    position: absolute;
+    content: '';
+    border: 3px solid rgb(255, 108, 82);
+    left: 0;
+    top: 5px;
+    height: 22px;
+}
+.popular_branding_container{
+   display: flex;
+   flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 15px;
+}

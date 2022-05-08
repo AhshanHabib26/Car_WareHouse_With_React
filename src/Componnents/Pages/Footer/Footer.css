@@ -1,7 +1,7 @@
 .main_footer_container{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 1rem;
     background-color: #211d26;
     padding: 15px 50px;
     color: #f0f8ff;
@@ -12,16 +12,19 @@
     background-color: #0a0116;
     border-radius: 10px;
     padding: 15px;
-    width: 350px;
-    height: 450px;
 }
 .info_box{
     display: flex;
     align-content: center;
-    justify-content: space-evenly;
     align-content: center;
     align-items: center;
     margin-bottom: 10px;
+}
+.phone_img{
+    display: flex;
+    margin-right: 15px;
+    align-items: center;
+    align-content: center;
 }
 .info_box .footer_icons_thumb{
     width: 40px;
@@ -37,6 +40,9 @@
     justify-content: center;
     justify-items: center;
     position: relative;
+}
+.info_details{
+    margin-top: 15px;
 }
 .input_box_area .footer_bar{
     position: relative;
@@ -110,7 +116,7 @@
 }
 .copy_right_area{
     text-align: right;
-    margin-top: 40px;
+    margin-top: 150px;
 }
 
 
